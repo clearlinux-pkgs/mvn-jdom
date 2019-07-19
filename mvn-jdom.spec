@@ -4,12 +4,10 @@
 #
 Name     : mvn-jdom
 Version  : 1.1
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
 Source0  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
 Source1  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
-Source2  : https://repo1.maven.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar
-Source3  : https://repo1.maven.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Saxpath
@@ -32,16 +30,10 @@ data components for the mvn-jdom package.
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
-
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6
-
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
 
 
 %files
@@ -51,5 +43,3 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
-/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar
-/usr/share/java/.m2/repository/org/jdom/jdom2/2.0.6/jdom2-2.0.6.pom
