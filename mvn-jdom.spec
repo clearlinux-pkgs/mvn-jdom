@@ -7,11 +7,14 @@ Version  : 1.1
 Release  : 3
 URL      : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
 Source0  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
-Source1  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+Source1  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+Source2  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+Source3  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Saxpath
 Requires: mvn-jdom-data = %{version}-%{release}
+Requires: mvn-jdom-license = %{version}-%{release}
 
 %description
 No detailed description available
@@ -24,16 +27,33 @@ Group: Data
 data components for the mvn-jdom package.
 
 
+%package license
+Summary: license components for the mvn-jdom package.
+Group: Default
+
+%description license
+license components for the mvn-jdom package.
+
+
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/mvn-jdom
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-jdom/LICENSE.txt
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
 cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
 
 
 %files
@@ -41,5 +61,11 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-jdom/LICENSE.txt

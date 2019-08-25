@@ -1,5 +1,5 @@
 PKG_NAME := mvn-jdom
 URL = https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
-ARCHIVES = https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom :
+ARCHIVES = https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom :
 
 include ../common/Makefile.common
