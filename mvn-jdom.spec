@@ -4,12 +4,14 @@
 #
 Name     : mvn-jdom
 Version  : 1.1
-Release  : 4
+Release  : 5
 URL      : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
 Source0  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
-Source1  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
-Source2  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
-Source3  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+Source1  : https://repo1.maven.org/maven2/jdom/jdom/1.0/jdom-1.0.jar
+Source2  : https://repo1.maven.org/maven2/jdom/jdom/1.0/jdom-1.0.pom
+Source3  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+Source4  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+Source5  : https://repo1.maven.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Saxpath
@@ -46,14 +48,20 @@ cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-jdom/LICENSE.txt
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
 cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/jdom/jdom/1.0
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/jdom/jdom/1.0
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/jdom/jdom/1.0/jdom-1.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.pom
 
 
 %files
@@ -61,6 +69,8 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar
+/usr/share/java/.m2/repository/jdom/jdom/1.0/jdom-1.0.pom
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.jar
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1.3/jdom-1.1.3.pom
 /usr/share/java/.m2/repository/org/jdom/jdom/1.1/jdom-1.1.jar
